@@ -67,7 +67,7 @@ const stopStoper = () => {
 		time.textContent = stopwatch.textContent
 		time.style.visibility = 'visible'
 		const newTime = document.createElement('li')
-		newTime.innerHTML = ` Pomiar nr ${num} <span>${time.textContent}</span>`
+		newTime.innerHTML = ` Pomiar nr ${num}:  <span>${time.textContent}</span>`
 		timeList.append(newTime)
 		num++
 	}

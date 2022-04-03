@@ -24,7 +24,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	background-image: radial-gradient(circle, rgb(43, 44, 46) 0%, rgb(25, 25, 25) 93%);
-	padding: 4em;
+	padding: 1em;
 	border-radius: 8px;
 	box-shadow: 5px 5px 10px black;
 	color: #fff;
@@ -62,7 +62,7 @@ body {
 
 .buttons {
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	flex-wrap: wrap;
 	margin: 1em;
 	width: 50%;
@@ -92,11 +92,15 @@ body {
 }
 
 .time-list {
+	width: 80%;
+	
 	li {
 		display: flex;
-		flex-direction: column;
+		justify-content: space-around;
 		font-size: 1.2rem;
 		color: $secondColor;
+		
+		text-align: center;
 	}
 
 	span {

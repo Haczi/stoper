@@ -35,7 +35,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background-image: radial-gradient(circle, #2b2c2e 0%, #191919 93%);
-  padding: 4em;
+  padding: 1em;
   border-radius: 8px;
   -webkit-box-shadow: 5px 5px 10px black;
           box-shadow: 5px 5px 10px black;
@@ -77,8 +77,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: 1em;
@@ -111,16 +112,19 @@ body {
   text-transform: uppercase;
 }
 
+.time-list {
+  width: 80%;
+}
+
 .time-list li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   font-size: 1.2rem;
   color: #d2c7be;
+  text-align: center;
 }
 
 .time-list span {
