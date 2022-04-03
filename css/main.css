@@ -1,0 +1,207 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  background-color: #333;
+}
+
+.wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: radial-gradient(circle, #2b2c2e 0%, #191919 93%);
+  padding: 4em;
+  border-radius: 8px;
+  -webkit-box-shadow: 5px 5px 10px black;
+          box-shadow: 5px 5px 10px black;
+  color: #fff;
+}
+
+.wrapper h1 {
+  margin-bottom: 0.5em;
+  font-size: 2.5rem;
+  font-weight: 200;
+}
+
+.wrapper .stopwatch {
+  font-size: 4rem;
+  color: #fa1406;
+}
+
+.wrapper .time {
+  visibility: hidden;
+}
+
+.info {
+  position: absolute;
+  top: 4%;
+  right: 2%;
+  padding: 0.5em;
+  cursor: pointer;
+  color: #d2c7be;
+  font-size: 1.2rem;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+.info:hover {
+  color: #fa1406;
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 1em;
+  width: 50%;
+}
+
+.buttons button {
+  padding: 0.5em;
+  width: 4em;
+  margin: 0.3em 0.1em;
+  background-color: transparent;
+  border: 1px solid #fa1406;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover, .buttons button:focus {
+  background-color: #fa1406;
+  outline: none;
+}
+
+.buttons .history {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-transform: uppercase;
+}
+
+.time-list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 1.2rem;
+  color: #d2c7be;
+}
+
+.time-list span {
+  font-weight: bold;
+}
+
+.modal-shadow {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+.modal-shadow .modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #d2c7be;
+  width: 30%;
+  min-width: 250px;
+  height: 35%;
+  padding: 1em;
+  border-radius: 8px;
+}
+
+.modal-shadow .modal h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.7em;
+  color: #fa1406;
+}
+
+.modal-shadow .modal p {
+  margin: 0.5em;
+  font-size: 1.2rem;
+}
+
+.modal-shadow .modal button {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  padding: 0.5em;
+  width: 30%;
+  border-radius: 8px;
+  background-color: black;
+  font-weight: bold;
+  border: 1px solid transparent;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.modal-shadow .modal button:hover {
+  border: 1px solid black;
+  background-color: #e2241a;
+}
+
+.modal-animation {
+  -webkit-animation: show-modal 0.5s;
+          animation: show-modal 0.5s;
+}
+
+@-webkit-keyframes show-modal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes show-modal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=main.css.map */

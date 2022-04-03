@@ -1,0 +1,168 @@
+$firstColor: #fa1406;
+$secondColor: #d2c7be;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Montserrat', sans-serif;
+	min-height: 100vh;
+	background-color: #333;
+}
+
+.wrapper {
+	position: relative;
+	width: 90%;
+	max-width: 800px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-image: radial-gradient(circle, rgb(43, 44, 46) 0%, rgb(25, 25, 25) 93%);
+	padding: 4em;
+	border-radius: 8px;
+	box-shadow: 5px 5px 10px black;
+	color: #fff;
+
+	h1 {
+		margin-bottom: 0.5em;
+		font-size: 2.5rem;
+		font-weight: 200;
+	}
+
+	.stopwatch {
+		font-size: 4rem;
+		color: $firstColor;
+	}
+
+	.time {
+		visibility: hidden;
+	}
+}
+
+.info {
+	position: absolute;
+	top: 4%;
+	right: 2%;
+	padding: 0.5em;
+	cursor: pointer;
+	color: $secondColor;
+	font-size: 1.2rem;
+	transition: color 0.5s;
+
+	&:hover {
+		color: $firstColor;
+	}
+}
+
+.buttons {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin: 1em;
+	width: 50%;
+
+	button {
+		padding: 0.5em;
+		width: 4em;
+		margin: 0.3em 0.1em;
+		background-color: transparent;
+		border: 1px solid $firstColor;
+		border-radius: 5px;
+		color: #fff;
+		font-size: 1.2rem;
+		cursor: pointer;
+		transition: background-color 0.3s;
+
+		&:hover,
+		&:focus {
+			background-color: $firstColor;
+			outline: none;
+		}
+	}
+	.history {
+		flex-grow: 1;
+		text-transform: uppercase;
+	}
+}
+
+.time-list {
+	li {
+		display: flex;
+		flex-direction: column;
+		font-size: 1.2rem;
+		color: $secondColor;
+	}
+
+	span {
+		font-weight: bold;
+	}
+}
+.modal-shadow {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.65);
+
+	.modal {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: $secondColor;
+		width: 30%;
+		min-width: 250px;
+		height: 35%;
+		padding: 1em;
+		border-radius: 8px;
+
+		h3 {
+			font-size: 1.6rem;
+			margin-bottom: 0.7em;
+			color: $firstColor;
+		}
+
+		p {
+			margin: 0.5em;
+			font-size: 1.2rem;
+		}
+		button {
+			position: absolute;
+			bottom: 10%;
+			left: 50%;
+			transform: translate(-50%);
+			padding: 0.5em;
+			width: 30%;
+			border-radius: 8px;
+			background-color: black;
+			font-weight: bold;
+			border: 1px solid transparent;
+			color: #fff;
+			transition: all 0.3s;
+
+			&:hover {
+				border: 1px solid black;
+				background-color: rgb(226, 36, 26);
+			}
+		}
+	}
+}
+
+.modal-animation {
+	animation: show-modal 0.5s;
+}
+
+@keyframes show-modal {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
