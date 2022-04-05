@@ -1,3 +1,6 @@
+
+
+
 let startBtn
 let pauseBtn
 let stopBtn
@@ -9,6 +12,12 @@ let timeList
 let closeModalBtn
 let infoBtn
 let modalShadow
+let brush
+let changeColor
+let red
+let blue
+let green
+let root
 
 let seconds = 0
 let minutes = 0
@@ -32,6 +41,12 @@ const prepareDOMElements = () => {
 	closeModalBtn = document.querySelector('.close')
 	infoBtn = document.querySelector('.info')
 	modalShadow = document.querySelector('.modal-shadow')
+    brush =document.querySelector('.brush')
+    changeColor = document.querySelector('.change-color')
+	red = document.querySelector('.red')
+	blue = document.querySelector('.blue')
+	green = document.querySelector('.green')
+	root = document.documentElement;
 }
 
 const prepareDomEvents = () => {
@@ -43,6 +58,24 @@ const prepareDomEvents = () => {
 	infoBtn.addEventListener('click', showModal)
 	closeModalBtn.addEventListener('click', showModal)
 	window.addEventListener('click', e => (e.target === modalShadow ? showModal() : false))
+    brush.addEventListener('click', showPalet)
+	red.addEventListener('click', () => {
+		root.style.setProperty('--first-color', 'rgb(250, 20, 6)');
+		root.style.setProperty('--hover-color', 'rgb(209, 33, 24)');
+		hidePalet()
+	});
+	
+	blue.addEventListener('click', () => {
+		root.style.setProperty('--first-color', 'rgb(6, 173, 250)');
+		root.style.setProperty('--hover-color', 'rgb(28, 145, 199)');
+		hidePalet()
+	});
+	
+	green.addEventListener('click', () => {
+		root.style.setProperty('--first-color', 'rgb(0, 255, 42)');
+		root.style.setProperty('--hover-color', 'rgb(28, 209, 58)');
+		hidePalet()
+	});
 }
 
 const startSoper = () => {
@@ -77,6 +110,7 @@ const stopStoper = () => {
 
 const pauseStoper = () => {
 	clearInterval(countTime)
+   
 }
 
 const resetStoper = () => {
@@ -106,5 +140,15 @@ const showModal = () => {
 	}
 	modalShadow.classList.toggle('modal-animation')
 }
+
+const showPalet = () => {
+    changeColor.classList.add('show-palet')
+}
+
+const hidePalet = () => {
+	changeColor.classList.remove('show-palet')
+}
+
+
 
 document.addEventListener('DOMContentLoaded', main)
