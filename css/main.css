@@ -130,7 +130,8 @@ body {
 
 .brush {
   top: 4%;
-  right: 6%;
+  right: 7%;
+  margin-right: .4em;
 }
 
 .brush:hover {
